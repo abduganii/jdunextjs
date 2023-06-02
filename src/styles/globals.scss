@@ -1,0 +1,52 @@
+@import url('../../public/fonts/fonts.css');
+
+:root {
+  --white-color: #FFFFFF;
+  --black-color: #121212;
+}
+
+html,
+body {
+  background: rgb(253, 253, 252);
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+
+}
+
+.displayBlock {
+  display: block !important;
+}

@@ -1,0 +1,70 @@
+.StudentList {
+    padding-top: 6px;
+    padding-bottom: 10px;
+    padding-left: 9px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+
+    &__pirson {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 200px;
+        margin-left: 17px;
+        cursor: pointer;
+        &__name {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #101828;
+
+        }
+
+        &__id {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: #667085;
+            margin-top: 2px;
+        }
+    }
+
+    &__skill {
+        width: 100%;
+        max-width: 180px;
+        margin-left: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__select {
+        cursor: pointer;
+    }
+
+    &__progres {
+        margin-left: 77px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &__progress {
+            height: 10px;
+        }
+
+        &__text {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #101828;
+
+        }
+    }
+}

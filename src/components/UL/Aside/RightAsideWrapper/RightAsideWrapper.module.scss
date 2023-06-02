@@ -1,0 +1,14 @@
+.aside {
+    background: #f4f4f4;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 335px;
+    margin-right: 20px;
+    min-height: calc(100vh - 150px);
+    height: auto;
+    position: sticky;
+
+    margin-top: 100px;
+    right: 0px;
+    z-index: 9;
+}

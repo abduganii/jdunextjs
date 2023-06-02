@@ -1,0 +1,109 @@
+.PersonList {
+    width: 100%;
+    padding: 10px 20px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+
+    &__fillname {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 246px;
+        cursor: pointer;
+    }
+
+    &__name {
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #101828;
+    }
+
+    &__id {
+        width: 100%;
+        max-width: 90px;
+        margin-left: 30px;
+    }
+
+    &__Gruop {
+        width: 100%;
+        max-width: 95px;
+        margin-left: 60px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #101828;
+
+    }
+
+    &__progres {
+        width: 100%;
+        max-width: 184px;
+        margin-left: 60px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &__progress {
+            height: 10px;
+        }
+
+        &__text {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            /* identical to box height, or 133% */
+
+
+            color: #101828;
+
+        }
+    }
+
+    &__phone {
+        width: 100%;
+        max-width: 184px;
+        margin-left: 60px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #101828;
+    }
+
+    &__skill {
+        width: 100%;
+        max-width: 185px;
+        margin-left: 90px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__email {
+        width: 100%;
+        max-width: 185px;
+        margin-left: 90px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #101828;
+    }
+}
