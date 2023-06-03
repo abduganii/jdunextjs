@@ -1,3 +1,4 @@
+'use client'
 import BackBtn2 from 'components/UL/buttun/backBtns'
 import BlueButtun from 'components/UL/buttun/blueBtn'
 import CancelBtn from 'components/UL/buttun/cancel'
@@ -5,7 +6,7 @@ import Container from 'components/UL/container'
 import { eyeOpenIcons, eyeCloseIcons, UploadIcons } from 'components/UL/icons'
 import SettingsInput from 'components/UL/input/settingsInput'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { useState } from 'react'
 import cls from "./Settings.module.scss"

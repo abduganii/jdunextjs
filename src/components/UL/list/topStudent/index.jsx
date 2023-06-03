@@ -12,8 +12,8 @@ export default function TopStudentList({ name, avatar, progress, onClick }) {
                 <Image
                     src={avatar}
                     alt="img"
-                    width={"44px"}
-                    height={"44px"}
+                    width={44}
+                    height={44}
                     objectFit="cover"
 
                 />

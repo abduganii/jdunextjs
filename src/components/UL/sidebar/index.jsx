@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import SideBarBtn from '../buttun/sideBatbtn'
@@ -6,7 +7,7 @@ import cls from "./sidebar.module.scss"
 
 import { decanLink, navLinks, recruitorLink, settingLinks } from './data'
 import { LogOutIcon } from '../icons'
-import { useRouter } from 'next/router'
+import { usePathname, useRouter } from 'next/navigation'
 import CancelBtn from '../buttun/cancel'
 import BlueButtun from '../buttun/blueBtn'
 import { useEffect } from 'react'
@@ -14,6 +15,7 @@ import { useState } from 'react'
 
 export default function SideBar() {
     const router = useRouter()
+    const pashName = usePathname()
     const x = useRef()
     const [rout, setRout] = useState("")
     const [Link, setLink] = useState([])
@@ -40,11 +42,11 @@ export default function SideBar() {
                         return (
                             <>
                                 <SideBarBtn
-                                    className={`${router.pathname.includes(`/${rout}` + e?.link) ? cls.SideBar__active : ""}`}
+                                    className={`${pashName.includes(`/${rout}` + e?.link) ? cls.SideBar__active : ""}`}
                                     key={e?.id}
                                     link={`/${rout}${e?.link}`}
                                 >
-                                    {e?.icon(`${router.pathname.includes(`/${rout}` + e?.link) ? "#FFFFFF" : "black"}`)} {e?.label}
+                                    {e?.icon(`${pashName.includes(`/${rout}` + e?.link) ? "#FFFFFF" : "black"}`)} {e?.label}
                                 </SideBarBtn>
                             </>
                         )
@@ -52,11 +54,11 @@ export default function SideBar() {
                     if (e.link == '/news') {
                         return (
                             <SideBarBtn
-                                className={`${router.pathname.includes(e?.link) ? cls.SideBar__active : ""}`}
+                                className={`${pashName.includes(e?.link) ? cls.SideBar__active : ""}`}
                                 key={e?.id}
                                 link={e?.link + "?categoryNew=All"}
                             >
-                                {e?.icon(`${router.pathname.includes(e?.link) ? "white" : "black"}`)} {e?.label}
+                                {e?.icon(`${pashName.includes(e?.link) ? "white" : "black"}`)} {e?.label}
                             </SideBarBtn>
                         )
                     }
@@ -64,11 +66,11 @@ export default function SideBar() {
                 <p className={cls.SideBar__text} style={{ marginTop: "50px" }}>Preferances </p>
                 {settingLinks?.map(e => (
                     <SideBarBtn
-                        className={`${router.pathname.includes(e?.link) ? cls.SideBar__active : ""}`}
+                        className={`${pashName.includes(e?.link) ? cls.SideBar__active : ""}`}
                         key={e?.id}
                         link={e.link}
                     >
-                        {e?.icon(`${router.pathname.includes(e?.link) ? "white" : "black"}`)}
+                        {e?.icon(`${pashName.includes(e?.link) ? "white" : "black"}`)}
                         {e?.label}
                     </SideBarBtn>
                 ))}

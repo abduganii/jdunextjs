@@ -1,9 +1,10 @@
+'use client'
 import DoteBtn from 'components/UL/buttun/doteBtn'
 import PlusBtn from 'components/UL/buttun/plusBtn'
 import SkillBtn from 'components/UL/buttun/skill'
 import { SelectIcon } from 'components/UL/icons'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import cls from "./StudentList.module.scss"
 
@@ -14,7 +15,7 @@ export default function StudentList({ isSelcted, avatar, name, id, skills = [], 
             <div className={cls.StudentList__select}>
                 <SelectIcon fill={`${isSelcted ? "#F7C02F" : "none"}`} border={"#F7C02F"} />
             </div>
-            <div className={cls.StudentList__pirson} onClick={() => router.push(`students/${id}`)}>
+            <div className={cls.StudentList__pirson} onClick={() => router.push(`/${id}`)}>
                 <Image
                     src={avatar}
                     width={48}

@@ -1,15 +1,18 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import { FilterIcon } from '../icons'
 import cls from "./filter.module.scss"
 
 import { filterRate } from './data.js'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 
 export default function Filter() {
     const router = useRouter()
+
+
     const x = useRef()
     return (
         <div className={cls.Filter}>
@@ -38,8 +41,8 @@ export default function Filter() {
                     {filterRate?.map(e => (
                         <p
                             key={e?.id}
-                            className={`${cls.Filter__Select__dropdown__text} ${router.query?.rate == e?.link ? cls.Filter__Select__dropdown__textActive1 : ""}`}
-                            onClick={() => router.push({ query: { rate: e.link } })}
+                            className={`${cls.Filter__Select__dropdown__text} `}
+                            onClick={() => router({ rate: e.link })}
                         >
                             {e.text}
                         </p>

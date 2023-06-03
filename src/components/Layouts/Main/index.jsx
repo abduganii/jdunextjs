@@ -1,6 +1,8 @@
+'use client'
+
 import Header from 'components/UL/header'
 import SideBar from 'components/UL/sidebar'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import cls from "./Main.module.scss"
 

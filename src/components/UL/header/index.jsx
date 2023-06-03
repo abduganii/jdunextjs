@@ -19,7 +19,7 @@ export default function Header() {
                             className={cls.Header__clock__img}
                             src={'/Image/line.png'}
                             width={15}
-                            height={13}
+                            height={5}
                             objectFit="contain"
                             alt={"img"}
                         />

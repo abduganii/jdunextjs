@@ -1,13 +1,13 @@
-
+'use client'
 import { Suspense, useEffect } from 'react';
 import NextNProgress from 'nextjs-progressbar';
 import '../styles/globals.scss'
-import MainLayout from 'components/Layouts/Main';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+
 
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("role"))) {
       router.push('/auth/login')
@@ -15,10 +15,10 @@ function MyApp({ Component, pageProps }) {
   },[])
   return (
       <Suspense fallback={<h1>Loading...</h1>}>
-        <MainLayout>
+   
         <NextNProgress color="#29D" startPosition={0.1} stopDelayMs={100} height={2} showOnShallow={false}/>
-          <Component {...pageProps} />
-        </MainLayout>
+          {/* <Component {...pageProps} /> */}
+      
       </Suspense>
   )
 }

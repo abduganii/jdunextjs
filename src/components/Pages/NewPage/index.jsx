@@ -1,3 +1,4 @@
+'use client'
 import RightAsideWrapper from 'components/UL/Aside/RightAsideWrapper'
 import BlueButtun from 'components/UL/buttun/blueBtn'
 import Container from 'components/UL/container'
@@ -6,7 +7,7 @@ import TopNewsList from 'components/UL/list/Topnews'
 import React from 'react'
 import cls from "./NewPage.module.scss"
 import { Category, News } from './data'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import NewsList from 'components/UL/list/newsList'
 

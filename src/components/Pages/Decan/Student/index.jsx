@@ -1,3 +1,4 @@
+'use client'
 import BlueButtun from 'components/UL/buttun/blueBtn'
 import Filter from 'components/UL/filter'
 import { PlusIcon } from 'components/UL/icons'
@@ -8,7 +9,7 @@ import cls from "./StudentPage.module.scss"
 
 import { Student } from "./data"
 import PersonList from 'components/UL/list/personList'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export default function StudentPage() {
     const router = useRouter()

@@ -1,9 +1,10 @@
+'use client'
 import BackBtn from 'components/UL/buttun/backBtn'
 import Container from 'components/UL/container'
 import Person from 'components/UL/person'
 import RateTest from 'components/UL/RateTest'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import cls from "./OneStudent.module.scss"
 

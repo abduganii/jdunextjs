@@ -1,3 +1,4 @@
+'use client'
 import Container from 'components/UL/container'
 import React from 'react'
 

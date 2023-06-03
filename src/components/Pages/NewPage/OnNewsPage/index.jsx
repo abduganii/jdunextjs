@@ -1,8 +1,9 @@
+'use client'
 import BackBtn from 'components/UL/buttun/backBtn'
 import Container from 'components/UL/container'
 import { ClockIcon } from 'components/UL/icons'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 import cls from "./OnNewsPage.module.scss"

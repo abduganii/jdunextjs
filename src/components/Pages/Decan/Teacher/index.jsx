@@ -1,9 +1,10 @@
+'use client'
 import BlueButtun from 'components/UL/buttun/blueBtn'
 import Filter from 'components/UL/filter'
 import { PlusIcon } from 'components/UL/icons'
 import PersonList from 'components/UL/list/personList'
 import TopList from 'components/UL/list/TopList'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Student } from './data'
 import cls from "./Teacher.module.scss"
