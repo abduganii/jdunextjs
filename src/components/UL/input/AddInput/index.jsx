@@ -1,11 +1,12 @@
 import React from 'react'
 import cls from "./AddInput.module.scss"
 
-export default function AddInput({ onChange, label, placeholder, ...other }) {
+export default function AddInput({ onChange, label, placeholder, type, ...other }) {
     return (
-        <label className={cls.AddInput}>
+        <label className={`${cls.AddInput} ${type === "textarea" && cls.widthFull}`} {...other}>
             <p className={cls.AddInput__label}>{label}</p>
-            <input className={cls.AddInput__input} type="text" placeholder={placeholder} onChange={onChange} />
+            {type === "textarea" ? <textarea className={cls.AddInput__textArea} placeholder={placeholder}>
+            </textarea> : <input className={cls.AddInput__input} type={type} placeholder={placeholder} onChange={onChange} />}
         </label>
     )
 }

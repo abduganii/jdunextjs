@@ -4,9 +4,9 @@ import cls from "./AvatarInput.module.scss"
 
 export default function AvatarInput({ onChange, ...other }) {
     return (
-        <div className={cls.AvatarInput}>
+        <div className={cls.AvatarInput}  {...other} >
             <label >
-                <input type="file" onChange={onChange}  {...other} />
+                <input type="file" onChange={onChange} />
                 <div className={cls.AvatarInput__avatar}>
                     <UploadNewIcon color={"#5627DC"} />
                 </div>

@@ -60,8 +60,15 @@ export default function StudentPage() {
             }
             {openMadal &&
                 <AddMadal role={"student"} closeMadal={() => setOpenMadal(false)}>
-                    <AvatarInput onChange={(e) => console.log(e)} style={{ marginBottom: "43px" }} />
-                    <AddInput label={"Firstname"} placeholder={"Firstname"} />
+                    <AvatarInput onChange={(e) => console.log(e)} style={{ marginBottom: '43px' }} />
+                    <div className={cls.StudentPage__addInputs}>
+                        <AddInput type={"text"} label={"Firstname"} placeholder={"Firstname"} />
+                        <AddInput type={"text"} label={"Lastname"} placeholder={"Lastname"} />
+                        <AddInput type={"text"} label={"ID"} placeholder={"ID"} />
+                        <AddInput type={"text"} label={"Specialisation"} placeholder={"Specialisation"} />
+                        <AddInput type={"text"} label={"Group"} placeholder={"Group"} />
+                        <AddInput type={"text"} label={"Course number"} placeholder={"Course number"} />
+                    </div>
                 </AddMadal>}
 
         </div>
