@@ -15,7 +15,7 @@ export default function StudentList({ isSelcted, avatar, name, id, skills = [], 
             <div className={cls.StudentList__select}>
                 <SelectIcon fill={`${isSelcted ? "#F7C02F" : "none"}`} border={"#F7C02F"} />
             </div>
-            <div className={cls.StudentList__pirson} onClick={() => router.push(`/${id}`)}>
+            <div className={cls.StudentList__pirson} onClick={() => router.push(`/recruitor/students/${id}`)}>
                 <Image
                     src={avatar}
                     width={48}
@@ -38,6 +38,8 @@ export default function StudentList({ isSelcted, avatar, name, id, skills = [], 
                 <p className={cls.StudentList__progres__text}>{rate}%</p>
             </div>
             <DoteBtn onClick={(e) => console.log(e)} />
+
+
         </li>
     )
 }

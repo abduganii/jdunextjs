@@ -10,7 +10,7 @@ export default function BlueButtun({ children, className, onClick, OnSubmit, ...
     const router = useRouter()
 
     return (
-        <button className={`${cls.BlueButtun}  ${className}`} onClick={onClick} onSubmit={OnSubmit} {...other} >
+        <button className={`${cls.BlueButtun}  ${className && className}`} onClick={onClick} onSubmit={OnSubmit} {...other} >
             {children}
         </button >
     )

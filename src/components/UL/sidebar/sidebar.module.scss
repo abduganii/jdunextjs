@@ -52,8 +52,20 @@
         margin-top: auto;
     }
 
-    &__logout2 {
+    &__logout2__wrap {
         display: none;
+
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100vw;
+        overflow: hidden;
+        height: 100vh;
+        background-color: transparent;
+        z-index: 10;
+    }
+
+    &__logout2 {
         position: absolute;
         bottom: 50px;
         left: 130px;
@@ -62,6 +74,7 @@
         box-shadow: -20px 24px 54px #DCDCDC;
         border-radius: 20px;
         padding: 20px 30px;
+        z-index: 15;
 
         &__text {
             font-family: 'Inter';

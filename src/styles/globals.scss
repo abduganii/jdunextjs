@@ -13,6 +13,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: var(--black-color);
+  animation: transparentIn 0.75s;
 }
 
 a {
@@ -49,4 +50,31 @@ button {
 
 .displayBlock {
   display: block !important;
+}
+
+
+@keyframes transparentIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+.fr-toolbar,
+.fr-wrapper,
+.fr-second-toolbar {
+  background: #F5F5F5 !important;
+}
+
+.fr-second-toolbar {
+  border-top: 1px solid rgb(11, 33, 43, 0.1);
+}
+
+.fr-toolbar {
+  border-bottom: 1px solid rgb(11, 33, 43, 0.1) !important;
 }

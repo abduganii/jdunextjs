@@ -17,6 +17,7 @@ export default function SideBar() {
     const router = useRouter()
     const pashName = usePathname()
     const x = useRef()
+    const y = useRef()
     const [rout, setRout] = useState("")
     const [Link, setLink] = useState([])
 
@@ -77,17 +78,24 @@ export default function SideBar() {
             </div>
 
             <button className={cls.SideBar__logout} onClick={() => x.current.classList.add("displayBlock")}><LogOutIcon /> Logout</button>
-            <div className={cls.SideBar__logout2} ref={x}>
-                <p className={cls.SideBar__logout2__text}>
-                    Do you want to Logout?
-                </p>
-                <div>
-                    <CancelBtn onClick={() => router.push('/auth/login')}>
-                        Yes
-                    </CancelBtn>
-                    <BlueButtun onClick={() => x.current.classList.remove("displayBlock")} style={{ paddingLeft: "30px" }}  >No</BlueButtun>
+            <div className={cls.SideBar__logout2__wrap} ref={x} onClick={(e) => {
+                if (e.target == x.current) {
+                    x.current.classList.remove("displayBlock")
+                }
+
+            }}>
+                <div className={cls.SideBar__logout2} ref={y}>
+                    <p className={cls.SideBar__logout2__text}>
+                        Do you want to Logout?
+                    </p>
+                    <div>
+                        <CancelBtn onClick={() => router.push('/auth/login')}>
+                            Yes
+                        </CancelBtn>
+                        <BlueButtun onClick={() => x.current.classList.remove("displayBlock")} style={{ paddingLeft: "30px" }}  >No</BlueButtun>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -1,6 +1,6 @@
 export const Student = [
     {
-        id: 0,
+        id: 31,
         name: "Annette Black",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
@@ -9,7 +9,7 @@ export const Student = [
     },
     {
         id: 1,
-        name: "Annette Black",
+        name: "Roy John",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
         progress:'78',
@@ -17,7 +17,7 @@ export const Student = [
     },
     {
         id: 2,
-        name: "Annette Black",
+        name: "Tom Slack",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
         progress:'38',
@@ -25,7 +25,7 @@ export const Student = [
     },
     {
         id: 3,
-        name: "Annette Black",
+        name: "Look Show",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
         progress:'95',
@@ -33,7 +33,7 @@ export const Student = [
     },
     {
         id: 4,
-        name: "Annette Black",
+        name: "Davit Black",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
         progress:'68',
@@ -41,7 +41,7 @@ export const Student = [
     },
     {
         id: 5,
-        name: "Annette Black",
+        name: "Annette Jon",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
         progress:'68',

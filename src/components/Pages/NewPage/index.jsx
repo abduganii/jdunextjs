@@ -14,7 +14,6 @@ import NewsList from 'components/UL/list/newsList'
 export default function NewPage() {
     const router = useRouter()
     const [endex, setInedex] = useState(0)
-    console.log(router?.query?.categoryNew)
 
     return (
         <div className={cls.NewPage}>
@@ -55,8 +54,8 @@ export default function NewPage() {
 
             </Container>
             <div className={cls.NewPage__left}>
-                {false ? <div className={cls.NewPage__left__btn}>
-                    <BlueButtun >
+                {true ? <div className={cls.NewPage__left__btn}>
+                    <BlueButtun onClick={() => router.push(`news/add`)} >
                         <PlusIcon />Add News
                     </BlueButtun>
                 </div> : <></>}

@@ -1,6 +1,6 @@
 export const Student = [
     {
-        id: 0,
+        id: 27,
         name: "Annette Black",
         skills:['html','scss','java','node'],
         avater: '/Image/Ellipse08.png',
