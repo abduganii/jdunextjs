@@ -1,9 +1,11 @@
-import AddNews from 'components/Pages/NewPage/AddNews'
-import React from 'react'
 
-export default function page() {
+import AddNews from 'components/Pages/NewPage/AddNews'
+
+
+export default function AddNew() {
   return (
     <>
+    
         <AddNews/>     
     </>
   )

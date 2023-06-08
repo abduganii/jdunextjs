@@ -5,7 +5,6 @@ import '../styles/globals.scss'
 import { useRouter } from 'next/navigation';
 
 
-
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -15,7 +14,6 @@ function MyApp({ Component, pageProps }) {
   },[])
   return (
       <Suspense fallback={<h1>Loading...</h1>}>
-   
         <NextNProgress color="#29D" startPosition={0.1} stopDelayMs={100} height={2} showOnShallow={false}/>
           {/* <Component {...pageProps} /> */}
       

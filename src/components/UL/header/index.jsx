@@ -20,7 +20,7 @@ export default function Header() {
                             src={'/Image/line.png'}
                             width={15}
                             height={5}
-                            objectFit="contain"
+                            objectFit="cover"
                             alt={"img"}
                         />
                         <div className={cls.Header__clock__line2}></div>

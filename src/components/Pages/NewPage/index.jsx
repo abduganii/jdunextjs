@@ -55,7 +55,7 @@ export default function NewPage() {
             </Container>
             <div className={cls.NewPage__left}>
                 {true ? <div className={cls.NewPage__left__btn}>
-                    <BlueButtun onClick={() => router.push(`news/add`)} >
+                    <BlueButtun onClick={() => router.push(`news/addnew`)} >
                         <PlusIcon />Add News
                     </BlueButtun>
                 </div> : <></>}
