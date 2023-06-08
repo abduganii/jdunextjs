@@ -7,13 +7,15 @@ import TopNewsList from 'components/UL/list/Topnews'
 import React from 'react'
 import cls from "./NewPage.module.scss"
 import { Category, News } from './data'
-import { useRouter } from 'next/navigation'
+
 import { useState } from 'react'
 import NewsList from 'components/UL/list/newsList'
+import { useRouter } from 'next/navigation'
 
 export default function NewPage() {
     const router = useRouter()
     const [endex, setInedex] = useState(0)
+
 
     return (
         <div className={cls.NewPage}>
@@ -22,7 +24,7 @@ export default function NewPage() {
                     <p
                         className={`${cls.NewPage__top__text} ${"All" === router?.query?.categoryNew ? cls.NewPage__top__textActive : ""} `}
                         onClick={() => {
-                            router.push({ query: { categoryNew: 'All' } })
+                            router.push(`/news?categoryNew=All`)
                             setInedex(0)
                         }}
                     >All News</p>
@@ -30,7 +32,7 @@ export default function NewPage() {
                         Category?.map((e, i) => (
                             <p
                                 onClick={() => {
-                                    router.push({ query: { categoryNew: e?.id } })
+                                    router.push(`/news?categoryNew=${e?.id}`)
                                     setInedex(i + 1)
                                 }}
                                 className={`${cls.NewPage__top__text} ${e.id == router?.query?.categoryNew ? cls.NewPage__top__textActive : ""} `}
