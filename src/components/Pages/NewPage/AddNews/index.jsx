@@ -8,9 +8,9 @@ import { Category } from "../data"
 import Language from 'components/UL/language'
 import Container from 'components/UL/container'
 import NewsInput from 'components/UL/input/newsInput'
-import RichText from 'components/UL/input/RichText'
-import Timepicker from 'components/UL/input/Timepicker'
-import Datapicker from 'components/UL/input/Datapicker'
+// import RichText from 'components/UL/input/RichText'
+// import Timepicker from 'components/UL/input/Timepicker'
+// import Datapicker from 'components/UL/input/Datapicker'
 
 const data = [
     {
@@ -46,7 +46,7 @@ export default function AddNews() {
                     <NewsInput label={"Image for Title"} type={"file"} />
                 </div>
                 <p className={cls.AddNews__dicr}>Description</p>
-                <RichText />
+                {/* <RichText /> */}
 
             </Container>
             <div className={cls.AddNews__right}>
@@ -75,8 +75,8 @@ export default function AddNews() {
                         </div>
                     ))}
                     <div className={cls.AddNews__data}>
-                        <Timepicker label='Time' />
-                        <Datapicker label={"Date"} />
+                        {/* <Timepicker label='Time' />
+                        <Datapicker label={"Date"} /> */}
                     </div>
                 </RightAsideWrapper>
             </div>
