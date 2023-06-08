@@ -1,16 +1,16 @@
 'use client'
-// import RightAsideWrapper from 'components/UL/Aside/RightAsideWrapper'
-// import BlueButtun from 'components/UL/buttun/blueBtn'
-// import { ShowIcons } from 'components/UL/icons'
+import RightAsideWrapper from 'components/UL/Aside/RightAsideWrapper'
+import BlueButtun from 'components/UL/buttun/blueBtn'
+import { ShowIcons } from 'components/UL/icons'
 import React, { useState } from 'react'
 import cls from "./AddNews.module.scss"
-// import { Category } from "../data"
-// import Language from 'components/UL/language'
-// import Container from 'components/UL/container'
-// import NewsInput from 'components/UL/input/newsInput'
-// import RichText from 'components/UL/input/RichText'
-// import Timepicker from 'components/UL/input/Timepicker'
-// import Datapicker from 'components/UL/input/Datapicker'
+import { Category } from "../data"
+import Language from 'components/UL/language'
+import Container from 'components/UL/container'
+import NewsInput from 'components/UL/input/newsInput'
+import RichText from 'components/UL/input/RichText'
+import Timepicker from 'components/UL/input/Timepicker'
+import Datapicker from 'components/UL/input/Datapicker'
 
 const data = [
     {
@@ -34,8 +34,8 @@ export default function AddNews() {
     const [category, setCategory] = useState(false)
     return (
         <from className={cls.AddNews}>
-            add
-            {/* <Container style={{ marginTop: "112px", marginRight: "51px" }}>
+
+            <Container style={{ marginTop: "112px", marginRight: "51px" }}>
                 <Language language={data} />
 
                 <div className={cls.AddNews__top}>
@@ -79,7 +79,7 @@ export default function AddNews() {
                         <Datapicker label={"Date"} />
                     </div>
                 </RightAsideWrapper>
-            </div> */}
+            </div>
         </from>
     )
 }
