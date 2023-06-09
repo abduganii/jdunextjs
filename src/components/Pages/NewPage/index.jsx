@@ -4,7 +4,7 @@ import BlueButtun from 'components/UL/buttun/blueBtn'
 import Container from 'components/UL/container'
 import { PlusIcon } from 'components/UL/icons'
 import TopNewsList from 'components/UL/list/Topnews'
-import React from 'react'
+import React, { useEffect } from 'react'
 import cls from "./NewPage.module.scss"
 import { Category, News } from './data'
 
@@ -16,7 +16,19 @@ export default function NewPage() {
     const router = useRouter()
     const [endex, setInedex] = useState(0)
 
+    const [roles, setRoles] = useState("")
 
+    useEffect(() => {
+
+        const role = JSON.parse(localStorage.getItem("role"))
+        if (role == "decan") {
+            setRoles(true)
+        } else {
+            setRoles(false)
+        }
+
+
+    }, []);
     return (
         <div className={cls.NewPage}>
             <Container style={{ marginTop: "112px" }}>
@@ -56,7 +68,7 @@ export default function NewPage() {
 
             </Container>
             <div className={cls.NewPage__left}>
-                {true ? <div className={cls.NewPage__left__btn}>
+                {roles ? <div className={cls.NewPage__left__btn}>
                     <BlueButtun onClick={() => router.push(`news/addnew`)} >
                         <PlusIcon />Add News
                     </BlueButtun>

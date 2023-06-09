@@ -38,8 +38,7 @@ export default function StudentList({ isSelcted, avatar, name, id, skills = [], 
                 <p className={cls.StudentList__progres__text}>{rate}%</p>
             </div>
             <DoteBtn onClick={(e) => console.log(e)} />
-
-
+            <hr className={cls.StudentList__line} />
         </li>
     )
 }

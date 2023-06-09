@@ -65,6 +65,7 @@ export default function PersonList({ id, img, name, gruop, rate, phone, skill = 
                 style={useId ? { display: "block" } : { display: "none" }}
                 className={cls.backround}
             ></div>
+            <hr className={cls.PersonList__line} />
         </div>
     )
 }

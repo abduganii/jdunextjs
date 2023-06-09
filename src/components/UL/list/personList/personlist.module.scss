@@ -5,8 +5,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+
     position: relative;
+
+    &__line {
+        display: inline-block;
+        border: none;
+        width: calc(100% - 68px);
+        height: 1px;
+        background-color: rgba(168, 171, 179, 0.3);
+        position: absolute;
+        bottom: 0;
+        left: 68px;
+    }
 
     &__fillname {
         display: flex;
@@ -55,10 +66,37 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        overflow: hidden;
 
-        &__progress {
-            height: 10px;
+        progress {
+            border-radius: 0px;
+            width: 100%;
+            height: 1px;
+            margin-left: -11.5%;
+
         }
+
+        progress::-webkit-progress-bar {
+            background-color: #E7E8EA;
+            border-radius: 0px;
+
+
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #5627DC;
+
+            border-radius: 0px;
+
+            box-shadow: 0px -1px 0px #5627DC;
+            border: 1px solid #5627DC;
+
+        }
+
+
+
+
+
 
         &__text {
             font-family: 'Inter';
