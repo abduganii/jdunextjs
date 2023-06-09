@@ -1,13 +1,25 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import cls from "./header.module.scss"
 
 export default function Header() {
-    const role = JSON.parse(localStorage.getItem("role"))
+    const [roles, setRoles] = useState("")
 
+    useEffect(() => {
+
+        const role = JSON.parse(localStorage.getItem("role"))
+        if (role == "decan") {
+            setRoles("Decan")
+        }
+        if (role == "recruitor") {
+            setRoles("Employer")
+        }
+
+    }, []);
     return (
         <header className={cls.Header}>
-            <h3 className={cls.Header__logo}>{role == 'decan' ? "Decan" : role == "recruitor" ? "Employer" : ""} Panel</h3>
+            <h3 className={cls.Header__logo}>{roles} Panel</h3>
             <div className={cls.Header__left}>
                 <input className={cls.Header__search} type="text" placeholder="Search" />
                 <div className={cls.Header__clock}>
