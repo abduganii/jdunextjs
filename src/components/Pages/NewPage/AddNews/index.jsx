@@ -12,7 +12,8 @@ import NewsInput from 'components/UL/input/newsInput'
 const RichText = dynamic(() => import('components/UL/input/RichText'), { ssr: false })
 import Timepicker from 'components/UL/input/Timepicker'
 import Datapicker from 'components/UL/input/Datapicker'
-
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation'
 const data = [
     {
         id: 2121,
@@ -33,6 +34,7 @@ const data = [
 
 export default function AddNews() {
     const [category, setCategory] = useState(false)
+    const router = useRouter()
     return (
         <from className={cls.AddNews}>
 
@@ -52,8 +54,11 @@ export default function AddNews() {
             </Container>
             <div className={cls.AddNews__right}>
                 <div className={cls.AddNews__btns}>
-                    <div className={cls.AddNews__show}><ShowIcons /> Quick view</div>
-                    <BlueButtun >
+                    <div className={cls.AddNews__show} onClick={() => router.push('news/1')}><ShowIcons /> Quick view</div>
+                    <BlueButtun onClick={() => {
+                        toast("news created")
+                        router.push('news/1')
+                    }}>
                         Publish News
                     </BlueButtun>
                 </div>
@@ -81,6 +86,7 @@ export default function AddNews() {
                     </div>
                 </RightAsideWrapper>
             </div>
+            <Toaster />
         </from>
     )
 }

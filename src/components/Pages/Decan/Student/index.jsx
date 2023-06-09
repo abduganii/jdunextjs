@@ -15,6 +15,7 @@ import AddMadal from 'components/UL/madals/AddMadal'
 import AvatarInput from 'components/UL/input/AvatarInput'
 import AddInput from 'components/UL/input/AddInput'
 
+import toast, { Toaster } from 'react-hot-toast';
 export default function StudentPage() {
     const router = useRouter()
     const [personId, setPersonId] = useState(false)
@@ -42,6 +43,10 @@ export default function StudentPage() {
                     gruop={"gruop"}
                     skill={e?.skills}
                     rate={e?.progress}
+                    update={() => {
+                        setOpenMadal(true)
+                        setPersonId(false)
+                    }}
                     remove={() => setPersonId(e?.id)}
                 />
             ))}
@@ -53,13 +58,22 @@ export default function StudentPage() {
                     role={'student'}
                     progress={oneStuednt?.progress}
                     years={"2years"}
-                    remove={() => console.log('delete')}
+                    remove={() => {
+                        toast("Student deleted")
+                        setPersonId(false)
+                    }}
                     className={personId ? cls.openMadal : ''}
                     close={() => setPersonId(false)}
                 />
             }
             {openMadal &&
-                <AddMadal role={"student"} closeMadal={() => setOpenMadal(false)}>
+                <AddMadal
+                    role={"student"}
+                    OnSubmit={() => {
+                        setOpenMadal(false)
+                        toast("Student created")
+                    }}
+                    closeMadal={() => setOpenMadal(false)}>
                     <AvatarInput onChange={(e) => console.log(e)} style={{ marginBottom: '43px' }} />
                     <div className={cls.StudentPage__addInputs}>
                         <AddInput type={"text"} label={"Firstname"} placeholder={"Firstname"} />
@@ -70,7 +84,7 @@ export default function StudentPage() {
                         <AddInput type={"text"} label={"Course number"} placeholder={"Course number"} />
                     </div>
                 </AddMadal>}
-
+            <Toaster />
         </div>
     )
 }

@@ -12,13 +12,14 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { Student } from './data'
 import cls from "./Teacher.module.scss"
-
+import toast, { Toaster } from 'react-hot-toast';
 export default function TeacherPage() {
     const [personId, setPersonId] = useState(false)
     const [openMadal, setOpenMadal] = useState(false)
     const oneStuednt = Student.find(e => e.id === personId)
+
     const router = useRouter()
-    console.log(personId)
+
     return (
         <div className={cls.TeacherPage}>
             <div className={cls.TeacherPage__filter}>
@@ -39,6 +40,10 @@ export default function TeacherPage() {
                     gruop={"gruop"}
                     phone={"999999999999"}
                     email={"email"}
+                    update={() => {
+                        setOpenMadal(true)
+                        setPersonId(false)
+                    }}
                     remove={() => setPersonId(e?.id)}
                 />
             ))}
@@ -50,13 +55,22 @@ export default function TeacherPage() {
                     role={'teacher'}
                     progress={oneStuednt?.progress}
                     years={"2years"}
-                    remove={() => console.log('delete')}
+                    remove={() => {
+                        toast("Teacher deleted")
+                        setPersonId(false)
+                    }}
                     className={personId ? cls.openMadal : ''}
                     close={() => setPersonId(false)}
                 />
             }
             {openMadal &&
-                <AddMadal role={"teacher"} closeMadal={() => setOpenMadal(false)}>
+                <AddMadal
+                    role={"teacher"}
+                    OnSubmit={() => {
+                        setOpenMadal(false)
+                        toast("Teacher created")
+                    }}
+                    closeMadal={() => setOpenMadal(false)}>
                     <AvatarInput onChange={(e) => console.log(e)} style={{ marginBottom: '43px' }} />
                     <div className={cls.TeacherPage__addInputs}>
                         <AddInput type={"text"} label={"Firstname"} placeholder={"Firstname"} />
@@ -68,6 +82,7 @@ export default function TeacherPage() {
                         <AddInput type={"textarea"} label={"Bio"} placeholder={"Bio"} />
                     </div>
                 </AddMadal>}
+            <Toaster />
         </div>
     )
 }

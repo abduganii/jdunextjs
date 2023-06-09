@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { Student } from './data'
 import cls from "./Recruitor.module.scss"
-
+import toast, { Toaster } from 'react-hot-toast';
 export default function RecruitorPage() {
     const [personId, setPersonId] = useState(false)
     const oneStuednt = Student.find(e => e.id === personId)
@@ -39,6 +39,10 @@ export default function RecruitorPage() {
                     phone={"999999999999"}
                     email={"email"}
                     remove={() => setPersonId(e?.id)}
+                    update={() => {
+                        setOpenMadal(true)
+                        setPersonId(false)
+                    }}
                 />
             ))}
             {
@@ -49,13 +53,22 @@ export default function RecruitorPage() {
                     role={'recruitor'}
                     progress={oneStuednt?.progress}
                     years={"2years"}
-                    remove={() => console.log('delete')}
+                    remove={() => {
+                        toast("Recruitor deleted")
+                        setPersonId(false)
+                    }}
                     className={personId ? cls.openMadal : ''}
                     close={() => setPersonId(false)}
                 />
             }
             {openMadal &&
-                <AddMadal role={"recruitors"} closeMadal={() => setOpenMadal(false)}>
+                <AddMadal
+                    role={"recruitors"}
+                    OnSubmit={() => {
+                        setOpenMadal(false)
+                        toast("Recruitor created")
+                    }}
+                    closeMadal={() => setOpenMadal(false)}>
                     <AvatarInput onChange={(e) => console.log(e)} style={{ marginBottom: '43px' }} />
                     <div className={cls.TeacherPage__addInputs}>
                         <AddInput type={"text"} label={"Firstname"} placeholder={"Firstname"} />
@@ -68,6 +81,7 @@ export default function RecruitorPage() {
                     </div>
                 </AddMadal>
             }
+            <Toaster />
         </div>
     )
 }

@@ -18,9 +18,9 @@ export default function AddMadal({ role, children, closeMadal, OnSubmit }) {
                 <div className={cls.AddMadal__inputs}>{children}</div>
                 <div className={cls.AddMadal__btm}>
                     <CancelBtn onClick={closeMadal}>Cancel</CancelBtn>
-                    <BlueButtun OnSubmit={OnSubmit} style={{ padding: "14px 30px" }}>Save</BlueButtun>
+                    <BlueButtun onClick={OnSubmit} style={{ padding: "14px 30px" }}>Save</BlueButtun>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     )
 }

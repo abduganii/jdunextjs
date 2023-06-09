@@ -48,7 +48,10 @@ export default function PersonList({ id, img, name, gruop, rate, phone, skill = 
                     remove()
                 }
                 }
-                update={update}
+                update={() => {
+                    setIseId(false)
+                    update()
+                }}
                 onClick={onClick}
                 style={useId ? { display: "block" } : { display: "none" }}
             />

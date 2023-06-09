@@ -1,8 +1,15 @@
+'use client'
 import { UploadNewIcon } from 'components/UL/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import cls from "./newsInput.module.scss"
 
 export default function NewsInput({ label, type, placeholder, onChange, ...other }) {
+    const [file, setFile] = useState()
+    const hendleimg = (e) => {
+        if (e.target.files[0]) {
+            setFile(e.target.files[0])
+        }
+    }
     return (
         <label className={`${cls.NewsInput} ${type == "file" ? cls.NewsInputFile : ""}`} {...other}>
             <p className={cls.NewsInput__label}>{label}</p>
@@ -12,9 +19,11 @@ export default function NewsInput({ label, type, placeholder, onChange, ...other
                     :
                     type == "file" ?
                         <div className={cls.NewsInput__file}>
-                            <input type="file" />
+                            <input type="file" onChange={hendleimg} />
                             <div className={cls.NewsInput__file__top}>
-                                <p className={cls.NewsInput__file__imgtext}>NO IMAGE</p>
+                                {file ?
+                                    <img className={cls.NewsInput__input__img} src={URL.createObjectURL(file)} alt="img" /> :
+                                    <p className={cls.NewsInput__file__imgtext}>NO IMAGE</p>}
                             </div>
                             <div className={cls.NewsInput__file__btm}>
                                 <div className={cls.NewsInput__file__blue}>
