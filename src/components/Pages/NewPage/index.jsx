@@ -30,7 +30,7 @@ export default function NewPage() {
 
     }, []);
     return (
-        <div className={cls.NewPage}>
+        <>
             <Container style={{ marginTop: "112px" }}>
                 <div className={cls.NewPage__top}>
                     <p
@@ -73,13 +73,13 @@ export default function NewPage() {
                         <PlusIcon />Add News
                     </BlueButtun>
                 </div> : <></>}
-                <RightAsideWrapper style={{ padding: "30px 18px", marginTop: 0 }} >
+                <RightAsideWrapper style={{ padding: "30px 18px", marginTop: 0, top: 0 }} >
                     <h3 className={cls.NewPage__left__title}> News</h3>
                     {News.slice(0, 5).map(e => (
                         <TopNewsList key={e.id} text={e?.title} createAt={e?.createAt} />
                     ))}
                 </RightAsideWrapper>
             </div>
-        </div>
+        </>
     )
 }

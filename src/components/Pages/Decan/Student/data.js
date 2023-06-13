@@ -62,5 +62,53 @@ export const Student = [
         avater: '/Image/Ellipse08.png',
         progress:'67',
         isSelcted:true
+    },
+    {
+        id: 122,
+        name: "Tom Slack",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'38',
+        isSelcted:false
+    },
+    {
+        id: 123,
+        name: "Look Show",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'95',
+        isSelcted:true
+    },
+    {
+        id: 124,
+        name: "Davit Black",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'68',
+        isSelcted:true
+    },
+    {
+        id: 125,
+        name: "Annette Jon",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'68',
+        isSelcted:true
+    },
+    {
+        id: 126,
+        name: "Annette Black",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'88',
+        isSelcted:false
+    },
+    {
+        id: 127,
+        name: "Annette Black",
+        skills:['html','scss','java','node'],
+        avater: '/Image/Ellipse08.png',
+        progress:'67',
+        isSelcted:true
     }
 ]

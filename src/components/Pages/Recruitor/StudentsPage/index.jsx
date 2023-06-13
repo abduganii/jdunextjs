@@ -10,7 +10,7 @@ import { Student } from "./data"
 
 export default function StudentsPage({ selected }) {
     return (
-        <div className={cls.StudentsPage}>
+        <>
             <Container style={{ paddingTop: "100px" }}>
                 <Filter />
                 <ul className={cls.StudentsPage__top}>
@@ -35,6 +35,6 @@ export default function StudentsPage({ selected }) {
                 </ul>
             </Container>
             <TopStudents />
-        </div>
+        </>
     )
 }

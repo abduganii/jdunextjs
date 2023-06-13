@@ -1,6 +1,6 @@
 .SideBar {
     min-width: 267px;
-    height: calc(100vh - 80px);
+
     background: #FFFFFF;
     border-right: 1px solid #E5E5E5;
     padding: 40px 20px;
@@ -12,7 +12,14 @@
     left: 0;
     z-index: 9;
     margin-top: 81px;
+    overflow: scroll;
 
+    height: calc(100vh - 82px);
+
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
 
     &__active {
         background: #5627DC;

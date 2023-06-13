@@ -43,13 +43,11 @@ export default function StudentPage() {
                     gruop={"gruop"}
                     skill={e?.skills}
                     rate={e?.progress}
-                    update={() => {
-                        setOpenMadal(true)
-                        setPersonId(false)
-                    }}
+                    update={() => router.push(`/decan/students/set/${e?.id}`)}
                     remove={() => setPersonId(e?.id)}
                 />
             ))}
+
             {
                 personId && <DeleteMadel
                     id={oneStuednt?.id}
