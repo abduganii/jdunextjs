@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
     if (!JSON.parse(localStorage.getItem("role"))) {
       router.push('/auth/login')
     } 
+    
   },[])
   return (
       // <Suspense fallback={<h1>Loading...</h1>}>
